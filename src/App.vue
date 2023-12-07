@@ -127,9 +127,11 @@ export default {
   methods: {
     addPrefix(prefix) {
       this.prefixes.push(prefix);
+      this.prefix = "";
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
+      this.sufix = "";
     },
   },
 };
