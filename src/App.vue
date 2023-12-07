@@ -11,13 +11,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <h5>Prefixos <span class="badge badge-info">0</span></h5>
+            <h5>
+              Prefixos
+              <span class="badge badge-info">{{ prefixes.length }}</span>
+            </h5>
             <div class="card">
               <div class="card-body">
                 <ul class="list-group">
-                  <li class="list-group-item">A</li>
-                  <li class="list-group-item">B</li>
-                  <li class="list-group-item">C</li>
+                  <li
+                    class="list-group-item"
+                    v-for="prefix in prefixes"
+                    v-bind:key="prefix"
+                  >
+                    {{ prefix }}
+                  </li>
                 </ul>
                 <br />
                 <input
@@ -29,13 +36,19 @@
             </div>
           </div>
           <div class="col-md">
-            <h5>Sufixos <span class="badge badge-info">0</span></h5>
+            <h5>
+              Sufixos <span class="badge badge-info">{{ sufixes.length }}</span>
+            </h5>
             <div class="card">
               <div class="card-body">
                 <ul class="list-group">
-                  <li class="list-group-item">A</li>
-                  <li class="list-group-item">B</li>
-                  <li class="list-group-item">C</li>
+                  <li
+                    class="list-group-item"
+                    v-for="sufix in sufixes"
+                    v-bind:key="sufix"
+                  >
+                    {{ sufix }}
+                  </li>
                 </ul>
                 <br />
                 <input
@@ -57,6 +70,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 export default {
   name: "App",
+  data: function () {
+    return {
+      prefixes: ["Air", "Jat", "Flight"],
+      sufixes: ["Hub", "Station", "Mart"],
+    };
+  },
 };
 </script>
 
