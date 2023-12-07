@@ -23,7 +23,16 @@
                     v-for="prefix in prefixes"
                     v-bind:key="prefix"
                   >
-                    {{ prefix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ prefix }}
+                      </div>
+                      <div class="col-md text-right">
+                        <button class="btn btn-info">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 </ul>
                 <br />
@@ -56,7 +65,16 @@
                     v-for="sufix in sufixes"
                     v-bind:key="sufix"
                   >
-                    {{ sufix }}
+                    <div class="row">
+                      <div class="col-md">
+                        {{ sufix }}
+                      </div>
+                      <div class="col-md text-right">
+                        <button class="btn btn-info">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </div>
+                    </div>
                   </li>
                 </ul>
                 <br />
