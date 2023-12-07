@@ -60,6 +60,25 @@
             </div>
           </div>
         </div>
+
+        <br />
+
+        <h5>
+          Domínios <span class="badge badge-info"> {{ domains.length }} </span>
+        </h5>
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group">
+              <li
+                class="list-group-item"
+                v-for="domain in domains"
+                v-bind:key="domain"
+              >
+                {{ domain }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -74,6 +93,17 @@ export default {
     return {
       prefixes: ["Air", "Jat", "Flight"],
       sufixes: ["Hub", "Station", "Mart"],
+      domains: [
+        "AirHub",
+        "AirStation",
+        "AirMart",
+        "JatHub",
+        "JatStation",
+        "JatMart",
+        "FlightHub",
+        "FlighStation",
+        "FlightMart",
+      ],
     };
   },
 };
