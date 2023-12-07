@@ -32,6 +32,7 @@
                     type="text"
                     class="form-control"
                     v-model="prefix"
+                    v-on:keyup.enter="addPrefix(prefix)"
                     placeholder="Digite o prefixo"
                   />
                   <div class="input-group-append">
@@ -64,6 +65,7 @@
                     type="text"
                     class="form-control"
                     v-model="sufix"
+                    v-on:keyup.enter="addSufix(sufix)"
                     placeholder="Digite o sufixo"
                   />
                   <div class="input-group-append">
