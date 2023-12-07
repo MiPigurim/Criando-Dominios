@@ -128,10 +128,20 @@ export default {
     addPrefix(prefix) {
       this.prefixes.push(prefix);
       this.prefix = "";
+      this.generate();
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
+      this.generate();
+    },
+    generate() {
+      this.domains = [];
+      for (const prefix of this.prefixes) {
+        for (const sufix of this.sufixes) {
+          this.domains.push(prefix + sufix);
+        }
+      }
     },
   },
 };
