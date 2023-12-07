@@ -31,10 +31,11 @@
                   <input
                     type="text"
                     class="form-control"
+                    v-model="prefix"
                     placeholder="Digite o prefixo"
                   />
                   <div class="input-group-append">
-                    <button class="btn btn-info">
+                    <button class="btn btn-info" v-on:click="addPrefix(prefix)">
                       <span class="fa fa-plus"></span>
                     </button>
                   </div>
@@ -62,10 +63,11 @@
                   <input
                     type="text"
                     class="form-control"
+                    v-model="sufix"
                     placeholder="Digite o sufixo"
                   />
                   <div class="input-group-append">
-                    <button class="btn btn-info">
+                    <button class="btn btn-info" v-on:click="addSufix(sufix)">
                       <span class="fa fa-plus"></span>
                     </button>
                   </div>
@@ -105,6 +107,8 @@ export default {
   name: "App",
   data: function () {
     return {
+      prefix: "",
+      sufix: "",
       prefixes: ["Air", "Jat", "Flight"],
       sufixes: ["Hub", "Station", "Mart"],
       domains: [
@@ -119,6 +123,14 @@ export default {
         "FlightMart",
       ],
     };
+  },
+  methods: {
+    addPrefix(prefix) {
+      this.prefixes.push(prefix);
+    },
+    addSufix(sufix) {
+      this.sufixes.push(sufix);
+    },
   },
 };
 </script>
