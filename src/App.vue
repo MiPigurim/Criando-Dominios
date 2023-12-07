@@ -28,7 +28,10 @@
                         {{ prefix }}
                       </div>
                       <div class="col-md text-right">
-                        <button class="btn btn-info">
+                        <button
+                          class="btn btn-info"
+                          v-on:click="deletePrefix(prefix)"
+                        >
                           <span class="fa fa-trash"></span>
                         </button>
                       </div>
@@ -70,7 +73,10 @@
                         {{ sufix }}
                       </div>
                       <div class="col-md text-right">
-                        <button class="btn btn-info">
+                        <button
+                          class="btn btn-info"
+                          v-on:click="deleteSufix(sufix)"
+                        >
                           <span class="fa fa-trash"></span>
                         </button>
                       </div>
@@ -150,10 +156,16 @@ export default {
       this.prefix = "";
       this.generate();
     },
+    deletePrefix(prefix) {
+      this.prefixes.splice(this.prefixes.indexOf(prefix), 1);
+    },
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
       this.generate();
+    },
+    deleteSufix(sufix) {
+      this.sufixes.splice(this.prefixes.indexOf(sufix), 1);
     },
     generate() {
       this.domains = [];
