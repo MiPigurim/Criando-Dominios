@@ -116,7 +116,20 @@
                 v-for="domain in domains"
                 v-bind:key="domain"
               >
-                {{ domain }}
+                <div class="row">
+                  <div class="col-md">
+                    {{ domain }}
+                  </div>
+                  <div class="col-md text-right">
+                    <a
+                      class="btn btn-info"
+                      href="http://www.hostgator.com.br"
+                      target="_blank"
+                    >
+                      <span class="fa fa-shopping-cart"></span>
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
