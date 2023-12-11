@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5>
-      Items
+      {{ title }}
       <span class="badge badge-info">{{ items.length }}</span>
     </h5>
     <div class="card">
@@ -30,7 +30,7 @@
             placeholder="Digite o item"
           />
           <div class="input-group-append">
-            <button class="btn btn-info" v-on:click="addPrefix(item)">
+            <button class="btn btn-info" v-on:click="addItem(item)">
               <span class="fa fa-plus"></span>
             </button>
           </div>
@@ -43,11 +43,20 @@
 <script>
 export default {
   name: "AppItemList",
-  props: ["items"],
+  props: ["title", "items"],
   data() {
     return {
       item: "",
     };
+  },
+  methods: {
+    addItem(item) {
+      this.$emit("addItem", item);
+      this.item = "";
+    },
+    deleteItem(item) {
+      this.$emit("deleteItem", item);
+    },
   },
 };
 </script>

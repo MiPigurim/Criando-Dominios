@@ -12,10 +12,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <app-item-list-vue v-bind:items="prefixes"></app-item-list-vue>
+            <AppItemListVue
+              title="Prefixos"
+              v-bind:items="prefixes"
+              v-on:addItem="addPrefix"
+              v-on:deleteItem="deletePrefix"
+            ></AppItemListVue>
           </div>
           <div class="col-md">
-            <app-item-list-vue v-bind:items="sufixes"></app-item-list-vue>
+            <app-item-list-vue
+              title="Sufixo"
+              v-bind:items="sufixes"
+              v-on:addItem="addSufix"
+              v-on:deleteItem="deleteSufix"
+            ></app-item-list-vue>
           </div>
         </div>
 
@@ -67,8 +77,6 @@ export default {
   },
   data: function () {
     return {
-      prefix: "",
-      sufix: "",
       prefixes: ["Air", "Jat", "Flight"],
       sufixes: ["Hub", "Station", "Mart"],
     };
@@ -76,14 +84,12 @@ export default {
   methods: {
     addPrefix(prefix) {
       this.prefixes.push(prefix);
-      this.prefix = "";
     },
     deletePrefix(prefix) {
       this.prefixes.splice(this.prefixes.indexOf(prefix), 1);
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
-      this.sufix = "";
     },
     deleteSufix(sufix) {
       this.sufixes.splice(this.prefixes.indexOf(sufix), 1);
