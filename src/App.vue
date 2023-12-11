@@ -16,50 +16,6 @@
           </div>
           <div class="col-md">
             <app-item-list-vue v-bind:items="sufixes"></app-item-list-vue>
-
-            <h5>
-              Sufixos <span class="badge badge-info">{{ sufixes.length }}</span>
-            </h5>
-            <div class="card">
-              <div class="card-body">
-                <ul class="list-group">
-                  <li
-                    class="list-group-item"
-                    v-for="sufix in sufixes"
-                    v-bind:key="sufix"
-                  >
-                    <div class="row">
-                      <div class="col-md">
-                        {{ sufix }}
-                      </div>
-                      <div class="col-md text-right">
-                        <button
-                          class="btn btn-info"
-                          v-on:click="deleteSufix(sufix)"
-                        >
-                          <span class="fa fa-trash"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <br />
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    v-model="sufix"
-                    v-on:keyup.enter="addSufix(sufix)"
-                    placeholder="Digite o sufixo"
-                  />
-                  <div class="input-group-append">
-                    <button class="btn btn-info" v-on:click="addSufix(sufix)">
-                      <span class="fa fa-plus"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
