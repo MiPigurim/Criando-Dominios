@@ -7,6 +7,8 @@
         Gerador de nomes utilizando Vue.js, GraphQL e Node
       </h6>
     </div>
+
+    <app-item-list-vue></app-item-list-vue>
     <div id="main">
       <div class="container">
         <div class="row">
@@ -142,8 +144,13 @@
 <script>
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
+import AppItemListVue from "./components/AppItemList.vue";
+
 export default {
   name: "App",
+  components: {
+    AppItemListVue,
+  },
   data: function () {
     return {
       prefix: "",
