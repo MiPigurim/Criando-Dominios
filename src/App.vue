@@ -137,39 +137,34 @@ export default {
       sufix: "",
       prefixes: ["Air", "Jat", "Flight"],
       sufixes: ["Hub", "Station", "Mart"],
-      domains: [],
     };
   },
   methods: {
     addPrefix(prefix) {
       this.prefixes.push(prefix);
       this.prefix = "";
-      this.generate();
     },
     deletePrefix(prefix) {
       this.prefixes.splice(this.prefixes.indexOf(prefix), 1);
-      this.generate();
     },
     addSufix(sufix) {
       this.sufixes.push(sufix);
       this.sufix = "";
-      this.generate();
     },
     deleteSufix(sufix) {
       this.sufixes.splice(this.prefixes.indexOf(sufix), 1);
-      this.generate();
-    },
-    generate() {
-      this.domains = [];
-      for (const prefix of this.prefixes) {
-        for (const sufix of this.sufixes) {
-          this.domains.push(prefix + sufix);
-        }
-      }
     },
   },
-  created() {
-    this.generate();
+  computed: {
+    domains() {
+      const domains = [];
+      for (const prefix of this.prefixes) {
+        for (const sufix of this.sufixes) {
+          domains.push(prefix + sufix);
+        }
+      }
+      return domains;
+    },
   },
 };
 </script>
