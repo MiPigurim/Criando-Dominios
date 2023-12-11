@@ -137,17 +137,7 @@ export default {
       sufix: "",
       prefixes: ["Air", "Jat", "Flight"],
       sufixes: ["Hub", "Station", "Mart"],
-      domains: [
-        "AirHub",
-        "AirStation",
-        "AirMart",
-        "JatHub",
-        "JatStation",
-        "JatMart",
-        "FlightHub",
-        "FlighStation",
-        "FlightMart",
-      ],
+      domains: [],
     };
   },
   methods: {
@@ -177,6 +167,9 @@ export default {
         }
       }
     },
+  },
+  created() {
+    this.generate();
   },
 };
 </script>
