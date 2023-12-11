@@ -8,57 +8,15 @@
       </h6>
     </div>
 
-    <app-item-list-vue></app-item-list-vue>
     <div id="main">
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <h5>
-              Prefixos
-              <span class="badge badge-info">{{ prefixes.length }}</span>
-            </h5>
-            <div class="card">
-              <div class="card-body">
-                <ul class="list-group">
-                  <li
-                    class="list-group-item"
-                    v-for="prefix in prefixes"
-                    v-bind:key="prefix"
-                  >
-                    <div class="row">
-                      <div class="col-md">
-                        {{ prefix }}
-                      </div>
-                      <div class="col-md text-right">
-                        <button
-                          class="btn btn-info"
-                          v-on:click="deletePrefix(prefix)"
-                        >
-                          <span class="fa fa-trash"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <br />
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    v-model="prefix"
-                    v-on:keyup.enter="addPrefix(prefix)"
-                    placeholder="Digite o prefixo"
-                  />
-                  <div class="input-group-append">
-                    <button class="btn btn-info" v-on:click="addPrefix(prefix)">
-                      <span class="fa fa-plus"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <app-item-list-vue v-bind:items="prefixes"></app-item-list-vue>
           </div>
           <div class="col-md">
+            <app-item-list-vue v-bind:items="sufixes"></app-item-list-vue>
+
             <h5>
               Sufixos <span class="badge badge-info">{{ sufixes.length }}</span>
             </h5>
